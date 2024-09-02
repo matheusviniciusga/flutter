@@ -1,11 +1,22 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MainApp());
+void main() => runApp(const MainApp());
+
+class MainApp extends StatefulWidget {
+  const MainApp({super.key});
+
+  @override
+  State<MainApp> createState() => MainAppState();
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class MainAppState extends State<MainApp> {
+  late int num;
+
+  @override
+  void initState() {
+    num = 0;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,17 +26,35 @@ class MainApp extends StatelessWidget {
           title: const Text("Calculadora"),
         ),
         body: Center(
-          child: Container(
-            margin: const EdgeInsets.fromLTRB(100, 200, 150, 100),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const TextField(),
-                const TextField(),
-                ElevatedButton(onPressed: () {}, child: const Text("Calcular"))
-              ],
-            ),
-          )
+          child: Column(
+            children: [
+              Text(
+                num.toString(),
+                style: TextStyle(fontSize: 32),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          num += 1;
+                        });
+                      },
+                      child: Text("Add", style: TextStyle(fontSize: 26))
+                  ),
+                  ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          num -= 1;
+                        });
+                      },
+                      child: Text("Sub", style: TextStyle(fontSize: 26))
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
