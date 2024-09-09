@@ -23,37 +23,53 @@ class MainAppState extends State<MainApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("Calculadora"),
+          backgroundColor: const Color.fromARGB(210, 255, 255, 255),
+          title: const Text("Calculadora", style: TextStyle(
+            fontSize: 36,
+            color: Color.fromARGB(255, 47, 0, 255)
+          )),
         ),
         body: Center(
-          child: Column(
-            children: [
-              Text(
-                num.toString(),
-                style: TextStyle(fontSize: 32),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          child: Container(
+            margin: const EdgeInsets.all(100),
+            padding:  const EdgeInsets.all(50),
+            color: Color.fromARGB(255, 255, 0, 0)
+            
+            child: Container(
+              color: Color.fromARGB(255, 0, 0, 255)
+
+              child: Column(
                 children: [
-                  ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          num += 1;
-                        });
-                      },
-                      child: Text("Add", style: TextStyle(fontSize: 26))
+                  Text(
+                    num.toString(),
+                    style: TextStyle(fontSize: 42),
                   ),
-                  ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          num -= 1;
-                        });
-                      },
-                      child: Text("Sub", style: TextStyle(fontSize: 26))
+                  Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        ElevatedButton(
+                            onPressed: () {
+                              setState(() {
+                                num += 1;
+                              });
+                            },
+                            child: Text("Add", style: TextStyle(fontSize: 26))
+                        ),
+                        ElevatedButton(
+                            onPressed: () {
+                              setState(() {
+                                num -= 1;
+                              });
+                            },
+                            child: Text("Sub", style: TextStyle(fontSize: 26))
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
-            ],
+            ),
           ),
         ),
       ),
