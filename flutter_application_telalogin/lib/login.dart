@@ -17,7 +17,7 @@ class _MyStatefulWidgetState extends State<Login> {
       home: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: const Text("Meu App",
+          title: const Text("App Compras",
             style: TextStyle(color: Colors.white),
           ),
           backgroundColor: Colors.blue

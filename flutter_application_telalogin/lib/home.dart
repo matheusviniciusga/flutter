@@ -19,12 +19,12 @@ class Home extends StatelessWidget{
               ),
               Tab(
                 icon: Icon(Icons.baby_changing_station),
-                text: "Bebê",
+                text: "Adicionar Produtos",
               )
             ]
           ),
           centerTitle: true,
-          title: const Text("Minha Página",
+          title: const Text("Compra Fácil",
             style: TextStyle(color: Colors.white),
           ),
           backgroundColor: Colors.blue
